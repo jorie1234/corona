@@ -92,13 +92,8 @@ func SaveCoronaImage(c *Corona, image string) {
 		log.Fatal(err)
 	}
 
-	xticks := plot.TimeTicks{Format: "02.02.2006"}
-
-	//	log.Printf("Confirmed Timelines %+#v", c.Locations[0].Timelines.Confirmed.Timeline)
-
-	p.Title.Text = fmt.Sprintf("Corona in %s from %s\n\n", c.Locations[0].Country, c.Locations[0].LastUpdated.Format("02.02.2006 15:04:05"))
-	p.X.Label.Text = "Datum"
-	p.Y.Label.Text = "Personen"
+	xticks := plot.TimeTicks{Format: "02.01.2006"}
+	p.Title.Text = fmt.Sprintf("Corona in %s from %s\n\n", c.Locations[0].Country, c.Locations[0].LastUpdated.Format("02.01.2006 15:04:05"))
 	p.X.Tick.Marker = xticks
 	p.Legend.Left = true
 	p.Legend.Top = true
